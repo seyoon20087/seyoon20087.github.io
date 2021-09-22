@@ -12,8 +12,8 @@ jobs:
           node-version: '16'
       - name: Download and configure GitLab Runner
         run: |
-        curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
-        chmod a+x /usr/local/bin/gitlab-runner
+          curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
+          chmod a+x /usr/local/bin/gitlab-runner
       - name: Compile site using gitlab-runner
         run: gitlab-runner exec shell page_build --timeout 60
       - name: Attempt to deploy to GitHub Pages
@@ -23,5 +23,5 @@ jobs:
           publish_dir: ./builds/0/project-0/build
       - name: Clean up temporary files
         run: |
-        rm -rf /home/runner/work/seyoon20087.github.io
-        git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io &> /dev/null
+          rm -rf /home/runner/work/seyoon20087.github.io
+          git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io &> /dev/null
