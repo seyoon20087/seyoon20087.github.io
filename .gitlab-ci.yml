@@ -18,4 +18,4 @@ page_build:
     - yarn run build
   after_script:
     - rm -rf /home/runner/work/seyoon20087.github.io
-    - git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io
+    - git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io &> /dev/null
