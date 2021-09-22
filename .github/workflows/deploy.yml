@@ -15,8 +15,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - run: curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
+      - run: chmod a+x /usr/local/bin/gitlab-runner
       - name: Test Build
-        run: chmod a+x /usr/local/bin/gitlab-runner
         run: gitlab-runner exec shell page_build --timeout 60
   gh-release:
     if: github.event_name != 'pull_request'
