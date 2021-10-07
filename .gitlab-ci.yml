@@ -1,0 +1,31 @@
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Bash.gitlab-ci.yml
+
+# See https://docs.gitlab.com/ee/ci/yaml/index.html for all available options
+
+# you can delete this line if you're not using Docker
+#image: busybox:latest
+
+stages:
+  - test
+  - build
+  - deploy
+
+page_build:
+  stage: build
+  before_script:
+    - touch yarn.lock
+    - env YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
+  script:
+    - yarn run build
+    - cp build/index.html build/404.html
+#  after_script:
+#    - rm -rf /home/runner/work/seyoon20087.github.io
+#    - git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io &> /dev/null
+#  rules:
+#    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
+
+include:
+  - template: Security/SAST.gitlab-ci.yml

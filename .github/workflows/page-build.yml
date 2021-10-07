@@ -1,0 +1,35 @@
+name: Build and deploy site
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ master ]
+  #schedule:
+  #  - cron: '0 0 * * *'
+jobs:
+  page-build:
+    name: Build and deploy site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js v16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Download and configure GitLab Runner
+        run: |
+          curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
+          chmod a+x /usr/local/bin/gitlab-runner
+      - name: Compile site using GitLab Runner
+        run: gitlab-runner exec shell page_build --timeout 75
+      - name: Attempt to deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./builds/0/project-0/build
+      - name: Clean up temporary files
+        run: |
+          rm -rf /home/runner/work/seyoon20087.github.io
+          git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io &> /dev/null

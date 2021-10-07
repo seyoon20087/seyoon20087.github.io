@@ -1,0 +1,21 @@
+footer {
+    text-align: center;
+}
+a[href].btn:hover,
+a[href].navbar__brand,
+a[href].navbar__brand:hover,
+a[href] {
+    text-decoration: none!important;
+}
+a[href]:hover {
+    text-decoration: underline;
+}
+/*
+.navbar, .footer {
+    box-shadow: none;
+    background-color: #18191a;
+}
+*/
+footer a[href]:hover {
+    text-decoration: underline!important;
+}
