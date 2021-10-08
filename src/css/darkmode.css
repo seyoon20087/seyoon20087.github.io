@@ -1,18 +1,24 @@
-html[data-theme="dark"] body {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--bs-body-bg);
+        color: var(--bs-body-color);
+    }
 }
-html[data-theme="dark"] body {
-    background-color: #18191a;
-    color: #ffffff;
-}
-html[data-theme="dark"] .tooltip-inner {
-    background-color: #ffffff;
-    color:#000000;
-}
-html[data-theme="dark"] .bs-tooltip-top .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
-    border-top-color: #ffffff;
-}
-html[data-theme="light"] .footer__copyright {
-    color: #212529;
+@media (prefers-color-scheme: dark) { 
+    body {
+        background-color: #18191a;
+        color: #ffffff;
+    }
+    .tooltip-inner {
+        background-color: #ffffff;
+        color:#000000;
+    }
+    .bs-tooltip-top .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+        border-top-color: #ffffff;
+    }
+    /*
+    .footer__copyright {
+        color: #212529;
+    }
+    */
 }
