@@ -9,9 +9,10 @@
 #image: busybox:latest
 
 stages:
-  - test
   - build
-  - deploy
+  - test
+  - dast
+  - fuzz
 
 page_build:
   stage: build
@@ -29,3 +30,9 @@ page_build:
 
 include:
   - template: Security/SAST.gitlab-ci.yml
+  - template: DAST.gitlab-ci.yml
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+  - template: Security/Container-Scanning.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: API-Fuzzing.gitlab-ci.yml
+  - template: Security/Cluster-Image-Scanning.gitlab-ci.yml
