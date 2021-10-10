@@ -12,7 +12,7 @@ function Footer() {
     <a
       href="https://docs.github.com/github/site-policy/github-terms-of-service"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       GitHub Terms of Service
     </a>{" "}
@@ -20,7 +20,7 @@ function Footer() {
     <a
       href="https://docs.github.com/github/site-policy/github-privacy-statement"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       Privacy Policy
     </a>

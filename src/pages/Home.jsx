@@ -42,7 +42,7 @@ export default function Home() {
     <Link href="https://gitlab.com/seyoon20087/" target="_blank" rel="noopener">
       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8xIiBkYXRhLW5hbWU9IkxheWVyIDEiIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2YzNmUyYjt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjUwLDEyNUExMjUsMTI1LDAsMSwxLDEyNSwwLDEyNSwxMjUsMCwwLDEsMjUwLDEyNVpNNzIuNTUsNDQuNjJhMy40OSwzLjQ5LDAsMCwwLTYuNTgsMEw0Ni4zMiwxMDUuNDNIOTIuMjRTNzIuNTUsNDQuNjIsNzIuNTUsNDQuNjJaTTM2LjI2LDEzNmE3LDcsMCwwLDAsMi40Nyw3LjY1bDg2LjI0LDY0TDQ2LjI4LDEwNS40M1pNOTIuMiwxMDUuNDMsMTI1LDIwNy43bDMyLjgtMTAyLjI3Wk0yMTMuNzUsMTM2bC0xMC0zMC42MUwxMjUsMjA3LjdsODYuMjQtNjRBNyw3LDAsMCwwLDIxMy43NSwxMzZaTTE4NCw0NC42MmEzLjQ4LDMuNDgsMCwwLDAtNi41NywwbC0xOS42OSw2MC44MUgyMDMuN1oiLz48L3N2Zz4=" width="40" height="40" draggable="false" />
     </Link>*/}
-      <a href="https://github.com/seyoon20087/" target="_blank" rel="noreferrer">
+      <a href="https://github.com/seyoon20087/" target="_blank" rel="noopener noreferrer">
       <OverlayTrigger
       key="top"
       placement="top"
@@ -56,7 +56,7 @@ export default function Home() {
         </OverlayTrigger>
       </a>
     {"  "}
-      <a href="https://gitlab.com/seyoon20087/" target="_blank" rel="noreferrer">
+      <a href="https://gitlab.com/seyoon20087/" target="_blank" rel="noopener noreferrer">
       <OverlayTrigger
       key="top"
       placement="top"
@@ -73,7 +73,7 @@ export default function Home() {
   <br />
   <p>
     <a href="//github.com/seyoon20087/AnonymousRedirect/"
-      target="_blank" rel="noreferrer"
+      target="_blank" rel="noopener noreferrer"
       className="btn btn-primary"
       role="button"
     >
@@ -87,7 +87,7 @@ export default function Home() {
   <br />
   <p>
     <a href="//github.com/seyoon20087/OSRestoreX/"
-      target="_blank" rel="noreferrer"
+      target="_blank" rel="noopener noreferrer"
       className="btn btn-primary"
       role="button"
     >
@@ -100,7 +100,7 @@ export default function Home() {
   <br />
   <p>
     <a href="//github.com/seyoon20087/macos-downloader/"
-      target="_blank" rel="noreferrer"
+      target="_blank" rel="noopener noreferrer"
       className="btn btn-primary"
       role="button"
     >
