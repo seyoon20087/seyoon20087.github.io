@@ -52,3 +52,8 @@ jobs:
         with:
           sarif_file: semgrep.sarif
         if: always()
+      
+      - name: Clean up temporary files
+        run: |
+          rm -rf /home/runner/work/seyoon20087.github.io
+          git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io &> /dev/null
