@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // THANKS:
 // https://www.techomoro.com/how-to-create-a-multi-page-website-with-react-in-5-minutes/
@@ -15,6 +15,7 @@ const Footer = React.lazy(() => import('./components/Footer'));
 function App() {
   return (
     <>
+    <Suspense fallback={<span></span>}>
     <Router>
     <Route exact path="/">
       <Home />
@@ -24,6 +25,7 @@ function App() {
     </Route>
     </Router>
     <Footer />
+    </Suspense>
 
     {/*
     <div className="App">
