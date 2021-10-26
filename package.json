@@ -8,9 +8,9 @@
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
     "bootstrap": "latest",
-    "react": "latest",
+    "react": "next",
     "react-bootstrap": "next",
-    "react-dom": "latest",
+    "react-dom": "next",
     "react-router-dom": "latest",
     "react-scripts": "latest",
     "web-vitals": "latest"
