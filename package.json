@@ -9,7 +9,7 @@
     "@testing-library/user-event": "latest",
     "bootstrap": "latest",
     "react": "next",
-    "react-bootstrap": "next",
+    "react-bootstrap": "latest",
     "react-dom": "next",
     "react-is": "next",
     "react-router-dom": "latest",
