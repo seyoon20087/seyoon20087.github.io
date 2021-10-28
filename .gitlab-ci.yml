@@ -18,7 +18,7 @@ page_build:
   stage: build
   before_script:
     - touch yarn.lock
-    - env YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
+    - env YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install --openssl-legacy-provider
   script:
     - yarn run build
     - cp build/index.html build/404.html
