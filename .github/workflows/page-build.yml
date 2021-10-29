@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js v16
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '17'
       - name: Download and configure GitLab Runner
         run: |
           curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
