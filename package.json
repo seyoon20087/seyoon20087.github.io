@@ -2,6 +2,7 @@
   "name": "seyoon20087.github.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://seyoon20087.github.io/",
   "packageManager": "yarn@3.1.0",
   "dependencies": {
     "@testing-library/jest-dom": "latest",
