@@ -55,6 +55,6 @@ jobs:
       
       - name: Clean up temporary files
         run: |
-          docker system prune --all --volumes --force
+          docker system prune --all --volumes --force &> /dev/null
           rm -rf /home/runner/work/seyoon20087.github.io
           git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io &> /dev/null
