@@ -2,6 +2,7 @@ import React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 const root_element = document.getElementById('root');
 
