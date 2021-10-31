@@ -15,7 +15,7 @@ const Footer = React.lazy(() => import('./components/Footer'));
 function App() {
   return (
     <>
-    <Suspense fallback={<span></span>}>
+    <Suspense fallback={<></>}>
     <Router>
     <Route exact path="/">
       <Home />
