@@ -54,6 +54,7 @@ jobs:
         if: always()
       
       - name: Clean up temporary files
+        if: always()
         run: |
           docker system prune --all --volumes --force &> /dev/null
           rm -rf /home/runner/work/seyoon20087.github.io
