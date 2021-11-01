@@ -69,9 +69,6 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-
-    - name: Find files
-      run: find .
       
     # Post clean job: remove temporary files
     - name: Clean up temporary files
