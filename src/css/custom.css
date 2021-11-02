@@ -2,8 +2,8 @@ footer {
     text-align: center;
 }
 a[href].btn:hover,
-a[href].navbar__brand,
-a[href].navbar__brand:hover,
+/*a[href].navbar__brand,
+a[href].navbar__brand:hover,*/
 a[href] {
     text-decoration: none!important;
 }

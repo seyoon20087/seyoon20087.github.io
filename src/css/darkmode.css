@@ -21,4 +21,7 @@
         color: #212529;
     }
     */
+    a[href] {
+        filter: invert(100%);
+    }
 }
