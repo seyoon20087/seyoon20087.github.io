@@ -19,12 +19,12 @@ function App() {
     <Router>
     <Route exact path="/">
       <Home />
+      <Footer />
     </Route>
     <Route path="*">
       <NotFound />
     </Route>
     </Router>
-    <Footer />
     </Suspense>
 
     {/*
