@@ -3,22 +3,22 @@
   "name": "seyoon20087.github.io",
   "icons": [
     {
-      "src": "https://avatars.githubusercontent.com/seyoon20087",
+      "src": "/icon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "https://avatars.githubusercontent.com/seyoon20087",
+      "src": "/icon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://avatars.githubusercontent.com/seyoon20087",
+      "src": "/icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "https://seyoon20087.github.io",
+  "start_url": "https://seyoon20087.github.io/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
