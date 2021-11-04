@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // THANKS:
 // https://www.techomoro.com/how-to-create-a-multi-page-website-with-react-in-5-minutes/
 // https://blog.ramadevsign.com/use-react-router-to-improve-ux-of-your-react-application
@@ -16,15 +16,12 @@ function App() {
   return (
     <>
     <Suspense fallback={<></>}>
-    <Router>
-    <Route exact path="/">
-      <Home />
-      <Footer />
+      <Routes>
+    <Route path="/">
+      <Route index element={<><Home /><Footer /></>} />
     </Route>
-    <Route path="*">
-      <NotFound />
-    </Route>
-    </Router>
+    <Route path="*" element={<><NotFound /></>} />
+    </Routes>
     </Suspense>
 
     {/*
