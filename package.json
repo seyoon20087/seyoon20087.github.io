@@ -5,6 +5,7 @@
   "homepage": "https://seyoon20087.github.io/",
   "packageManager": "yarn@3.1.0",
   "dependencies": {
+    "@popperjs/core": "latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
