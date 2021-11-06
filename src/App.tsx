@@ -2,6 +2,7 @@
 // import './App.css';
 import React, { Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 // THANKS:
 // https://www.techomoro.com/how-to-create-a-multi-page-website-with-react-in-5-minutes/
 // https://blog.ramadevsign.com/use-react-router-to-improve-ux-of-your-react-application
@@ -15,14 +16,26 @@ const Footer = React.lazy(() => import('./components/Footer'));
 function App() {
   return (
     <>
-    <Suspense fallback={<></>}>
-      <Routes>
-    <Route path="/">
-      <Route index element={<><Home /><Footer /></>} />
-    </Route>
-    <Route path="*" element={<><NotFound /></>} />
-    </Routes>
-    </Suspense>
+    <HelmetProvider>
+      <Suspense fallback={<></>}>
+        <Routes>
+          <Route path="/">
+            <Route index element={
+              <>
+                <Helmet defaultTitle="seyoon20087.github.io" />
+                <Home />
+                <Footer />
+              </>
+            } />
+          </Route>
+          <Route path="*" element={
+              <>
+                <Helmet defaultTitle="seyoon20087.github.io" />
+                <NotFound />
+              </>} />
+          </Routes>
+      </Suspense>
+    </HelmetProvider>
 
     {/*
     <div className="App">

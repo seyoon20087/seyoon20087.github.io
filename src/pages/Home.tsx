@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 // import Head from '@docusaurus/Head';
 // import LayoutProviders from '@theme/LayoutProviders';
 // import LayoutHead from '@theme/LayoutHead';
@@ -8,20 +8,18 @@ import React, { useEffect } from "react";
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 // import "../../node_modules/bs5-react-elements/dist/bs5-react-elements";
 // import {Tooltip} from "bs5-react-elements";
-// import Tippy from '@tippyjs/react';
-// import 'tippy.js/dist/tippy.css'; // optional
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import "../css/darkmode.css";
 import "../css/custom.css";
 
-export default function Home() {
-
+function Home() {
+/*
   useEffect(() => {/*
-    !function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()*/
+    !function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()
     document.title = "seyoon20087.github.io";  
   }, []);
-
+*/
     return (
       <>
       {/*<LayoutProviders>
@@ -118,3 +116,5 @@ export default function Home() {
 </>
     );
 }
+
+export default Home;
