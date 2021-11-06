@@ -9,10 +9,10 @@
 #image: busybox:latest
 
 stages:
-  - build
   - test
   - dast
   - fuzz
+  - build
 
 page_build:
   stage: build
