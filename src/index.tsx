@@ -6,9 +6,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
-const root_element = document.getElementById('root');
-
-const root = ReactDOM.createRoot(root_element);
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
