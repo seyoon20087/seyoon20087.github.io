@@ -6,6 +6,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
+// @ts-ignore
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
