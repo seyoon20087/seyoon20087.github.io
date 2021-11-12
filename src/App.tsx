@@ -21,18 +21,22 @@ function App() {
         <Routes>
           <Route path="/">
             <Route index element={
-              <>
-                <Helmet defaultTitle="seyoon20087.github.io" />
+              <HelmetProvider>
+                <Helmet>
+                  <title>seyoon20087.github.io</title>
+                </Helmet>
                 <Home />
                 <Footer />
-              </>
+              </HelmetProvider>
             } />
           </Route>
           <Route path="*" element={
-              <>
-                <Helmet defaultTitle="seyoon20087.github.io" />
+              <HelmetProvider>
+                <Helmet>
+                <title>seyoon20087.github.io</title>
+                </Helmet>
                 <NotFound />
-              </>} />
+              </HelmetProvider>} />
           </Routes>
       </Suspense>
     </HelmetProvider>
