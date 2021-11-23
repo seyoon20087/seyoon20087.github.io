@@ -24,6 +24,7 @@ jobs:
         uses: returntocorp/semgrep-action@v1
         with:
           config: >- # more at semgrep.dev/explore
+            auto
             p/ci
             p/security-audit
             p/secrets
@@ -57,5 +58,5 @@ jobs:
         if: always()
         run: |
           docker system prune --all --volumes --force &> /dev/null
-          rm -rf /home/runner/work/seyoon20087.github.io
+          sudo rm -rf /home/runner/work/seyoon20087.github.io
           git init /home/runner/work/seyoon20087.github.io/seyoon20087.github.io &> /dev/null
