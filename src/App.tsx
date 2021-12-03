@@ -19,11 +19,16 @@ function App() {
         <Routes>
           <Route path="/">
             <Route index element={
-                <><Home /><Footer /></>
+                <>
+                  <Home />
+                  <Footer />
+                </>
             } />
           </Route>
           <Route path="*" element={
-                <><NotFound /></>} />
+                <>
+                  <NotFound />
+                </>} />
           </Routes>
       </Suspense>
   </>
