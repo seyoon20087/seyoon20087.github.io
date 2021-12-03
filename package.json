@@ -94,6 +94,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.4",
     "eslint-plugin-security": "latest"
   },
   "engines": {
