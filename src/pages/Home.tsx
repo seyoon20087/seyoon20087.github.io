@@ -12,6 +12,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import "../css/darkmode.css";
 import "../css/custom.css";
+import { Helmet } from "react-helmet";
 
 function Home() {
 /*
@@ -24,6 +25,10 @@ function Home() {
       <>
       {/*<LayoutProviders>
       <LayoutHead title="" />*/}
+      <Helmet>
+        <html lang="en" />
+        <title>seyoon20087.github.io</title>
+      </Helmet>
         <div className="container">
   <br />
   <br />
