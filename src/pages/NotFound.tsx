@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 
 function NotFound() {
     <Helmet>
-        <html lang="en" />
+        <html lang="en" dir="ltr" />
         <title>seyoon20087.github.io</title>
     </Helmet>
     return (

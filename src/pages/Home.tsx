@@ -26,7 +26,7 @@ function Home() {
       {/*<LayoutProviders>
       <LayoutHead title="" />*/}
       <Helmet>
-        <html lang="en" />
+        <html lang="en" dir="ltr" />
         <title>seyoon20087.github.io</title>
       </Helmet>
         <div className="container">
