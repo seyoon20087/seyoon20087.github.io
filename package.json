@@ -17,7 +17,7 @@
     "react": "next",
     "react-bootstrap": "latest",
     "react-dom": "next",
-    "react-helmet-async": "latest",
+    "react-helmet": "https://github.com/seyoon20087/react-helmet/archive/refs/heads/package.tar.gz",
     "react-is": "next",
     "react-router-dom": "latest",
     "react-scripts": "latest",
