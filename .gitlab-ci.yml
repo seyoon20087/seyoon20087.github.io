@@ -20,7 +20,7 @@ page_build:
     - touch yarn.lock
     - env YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
   script:
-    - env NODE_OPTIONS=--openssl-legacy-provider yarn run build
+    - env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production yarn run build
     - cp build/index.html build/404.html
 #  after_script:
 #    - rm -rf /home/runner/work/seyoon20087.github.io
