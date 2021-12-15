@@ -41,9 +41,12 @@
     "test": "react-scripts test"
   },
   "eslintConfig": {
-    "plugins": [],
+    "plugins": [
+      "security"
+    ],
     "extends": [
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:security/recommended"
     ]
   },
   "browserslist": {
