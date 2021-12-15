@@ -42,7 +42,8 @@
   },
   "eslintConfig": {
     "plugins": [
-      "security"
+      "security",
+      "react"
     ],
     "extends": [
       "eslint:recommended",
