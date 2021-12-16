@@ -89,8 +89,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-helmet": "^6.1.4",
-    "eslint-plugin-react": "^7.27.1",
+    "@types/react-helmet": "latest",
+    "eslint-plugin-react": "latest",
     "eslint-plugin-security": "latest"
   },
   "engines": {
