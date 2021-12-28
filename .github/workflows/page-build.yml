@@ -28,7 +28,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./builds/0/project-0/build
+          publish_dir: ./builds/0/project-0/build/public
       - name: Clean up temporary files
         if: always()
         run: |

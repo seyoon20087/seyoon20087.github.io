@@ -39,5 +39,6 @@
     "typescript": "latest",
     "webpack": "latest",
     "webpack-dev-server": "latest"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
