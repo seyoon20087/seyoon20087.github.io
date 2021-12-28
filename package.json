@@ -1,101 +1,43 @@
 {
-  "name": "seyoon20087.github.io",
-  "version": "",
-  "private": true,
-  "homepage": "https://seyoon20087.github.io/",
-  "packageManager": "yarn@3.1.0",
+  "scripts": {
+    "start:tsc": "tsc -b -w --preserveWatchOutput",
+    "start": "concurrently \"yarn start:tsc\" \"razzle start\"",
+    "build": "tsc -b && razzle build --noninteractive && razzle export",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js"
+  },
   "dependencies": {
     "@popperjs/core": "latest",
+    "bootstrap": "latest",
+    "express": "latest",
+    "react": "next",
+    "react-bootstrap": "latest",
+    "react-dom": "next",
+    "react-helmet": "latest",
+    "react-router-dom": "latest"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
+    "@types/express": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "bootstrap": "latest",
-    "react": "next",
-    "react-bootstrap": "latest",
-    "react-dom": "next",
-    "react-helmet": "https://github.com/seyoon20087/react-helmet/archive/refs/heads/package.tar.gz",
-    "react-is": "next",
-    "react-router-dom": "latest",
-    "react-scripts": "latest",
-    "typescript": "latest",
-    "web-vitals": "latest",
-    "workbox-background-sync": "latest",
-    "workbox-broadcast-update": "latest",
-    "workbox-cacheable-response": "latest",
-    "workbox-core": "latest",
-    "workbox-expiration": "latest",
-    "workbox-navigation-preload": "latest",
-    "workbox-precaching": "latest",
-    "workbox-range-requests": "latest",
-    "workbox-routing": "latest",
-    "workbox-strategies": "latest",
-    "workbox-streams": "latest"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
-  },
-  "eslintConfig": {
-    "plugins": [],
-    "extends": [
-      "eslint:recommended"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      "and_chr 95",
-      "and_ff 92",
-      "and_qq 10.4",
-      "and_uc 12.12",
-      "baidu 7.12",
-      "chrome 95",
-      "chrome 94",
-      "chrome 93",
-      "chrome 92",
-      "edge 95",
-      "edge 94",
-      "firefox 94",
-      "firefox 93",
-      "firefox 92",
-      "firefox 91",
-      "firefox 78",
-      "not ie <= 11",
-      "ios_saf 15",
-      "ios_saf 14.5-14.8",
-      "ios_saf 14.0-14.4",
-      "ios_saf 12.2-12.5",
-      "kaios 2.5",
-      "not op_mini all",
-      "op_mob 64",
-      "opera >= 79",
-      "safari 15",
-      "safari 14.1",
-      "safari 13.1",
-      "samsung 15.0",
-      "samsung 14.0",
-      "not dead"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "not ie <= 11",
-      "not op_mini all"
-    ]
-  },
-  "devDependencies": {
     "@types/react-helmet": "latest",
-    "eslint-plugin-react": "latest",
-    "eslint-plugin-security": "latest"
-  },
-  "engines": {
-    "node": "17.x",
-    "npm": "8.x",
-    "yarn": "3.x"
+    "@types/react-router-dom": "latest",
+    "@types/webpack-env": "latest",
+    "babel-preset-razzle": "latest",
+    "concurrently": "latest",
+    "cross-env": "latest",
+    "html-webpack-plugin": "latest",
+    "mini-css-extract-plugin": "latest",
+    "razzle": "latest",
+    "razzle-dev-utils": "latest",
+    "typescript": "latest",
+    "webpack": "latest",
+    "webpack-dev-server": "latest"
   }
 }
