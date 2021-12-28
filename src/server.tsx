@@ -10,7 +10,7 @@ import App from './App';
 let assets: any;
 
 const syncLoadAssets = () => {
-  assets = require(`./build/assets.json`);
+  assets = require(`../build/assets.json`);
 };
 syncLoadAssets();
 
