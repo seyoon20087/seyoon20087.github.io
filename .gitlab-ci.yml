@@ -20,7 +20,7 @@ page_build:
     - touch yarn.lock
     - env YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
   script:
-    - env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production yarn run build
+    - env CI=false NODE_ENV=production yarn run build
     - mv build/public/404/index.html build/public/404.html
     - rm -rf build/public/404
 #  after_script:
