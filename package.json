@@ -37,6 +37,7 @@
     "razzle": "latest",
     "razzle-dev-utils": "latest",
     "typescript": "latest",
+    "url": "^0.11.0",
     "webpack": "latest",
     "webpack-dev-server": "latest"
   },

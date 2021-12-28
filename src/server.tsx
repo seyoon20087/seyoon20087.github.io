@@ -10,7 +10,7 @@ import App from './App';
 let assets: any;
 
 const syncLoadAssets = () => {
-  assets = require(process.env.RAZZLE_ASSETS_MANIFEST!);
+  assets = require(`${process.env.RAZZLE_ASSETS_MANIFEST!}`);
 };
 syncLoadAssets();
 

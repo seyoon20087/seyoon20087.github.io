@@ -6,11 +6,13 @@ let app = require('./server').default;
 if (module.hot) { // @ts-ignore
   module.hot.accept('./server', () => {
     console.log('🔁  HMR Reloading `./server`...');
+    /*
     try {
       app = require('./server').default;
     } catch (error) {
       console.error(error);
     }
+    */
   });
   console.info('✅  Server-side HMR Enabled!');
 }
