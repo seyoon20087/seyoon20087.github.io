@@ -7,6 +7,7 @@ function NotFound() {
     <Helmet>
         <html lang="en" dir="ltr" />
         <title>seyoon20087.github.io</title>
+        <meta name="description" content="seyoon20087.github.io" />
     </Helmet>
     return (
         <>

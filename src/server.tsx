@@ -51,8 +51,12 @@ export const renderApp = (req: express.Request, res: express.Response) => {
     `<html ${helmet.htmlAttributes.toString()}>`+
     `<head>`+
         `<meta charset="utf-8" />`+
-        `<meta name="viewport" content="width=device-width, initial-scale=1">`+
-        `<link rel="icon" href="https://avatars.githubusercontent.com/seyoon20087"/>`+
+        `<meta name="viewport" content="width=device-width, initial-scale=1" />`+
+        `<link rel="icon" href="https://avatars.githubusercontent.com/seyoon20087" />`+
+        `<link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/seyoon20087" />`+
+        `<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />`+
+        `<meta name="theme-color" content="#18191a" media="(prefers-color-scheme: dark)" />`+
+        `<link rel="manifest" href="/manifest.webmanifest" />`+
         `${helmet.title.toString()}`+
         `${helmet.meta.toString()}`+
         `${helmet.link.toString()}`+
