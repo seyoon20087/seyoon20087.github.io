@@ -16,11 +16,6 @@
     .bs-tooltip-top .tooltip-arrow::before, .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
         border-top-color: #ffffff;
     }
-    /*
-    .footer__copyright {
-        color: #212529;
-    }
-    */
     footer a[href], .btn {
         filter: invert(100%);
     }
