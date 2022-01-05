@@ -15,7 +15,9 @@ function NotFound() {
         <title>{"seyoon20087.github.io"}</title>
         <meta name="description" content="seyoon20087.github.io" />
     </Helmet>
-        {isBrowserLoaded ? <Navigate to="/" /> : null}
+        {isBrowserLoaded ? <Navigate to="/" /> : <noscript>
+            <meta httpEquiv="refresh" content="0; url=/" />
+        </noscript>}
         </>
     );
 }
