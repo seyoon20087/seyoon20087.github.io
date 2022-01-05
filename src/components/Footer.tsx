@@ -9,7 +9,7 @@ function Footer() {
   <footer className="container">
     {`Copyright © ${new Date().getFullYear()} github/seyoon20087. All rights reserved.`}
     <br />
-    {"Use of this site subject to the"}
+    {"Use of this site subject to the "}
     <a
       href="https://docs.github.com/github/site-policy/github-terms-of-service"
       target="_blank"
