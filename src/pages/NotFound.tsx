@@ -4,14 +4,18 @@ import { Helmet } from 'react-helmet';
 import { Navigate } from 'react-router-dom';
 
 function NotFound() {
-    <Helmet>
-        <html lang="en" dir="ltr" />
-        <title>seyoon20087.github.io</title>
-        <meta name="description" content="seyoon20087.github.io" />
-    </Helmet>
+    const [isBrowserLoaded, setIsBrowserLoaded] = React.useState(false);
+    React.useEffect(() => {
+      setIsBrowserLoaded(true);
+    })
     return (
         <>
-        <Navigate to="/" />
+        <Helmet>
+        <html lang="en" dir="ltr" />
+        <title>{"seyoon20087.github.io"}</title>
+        <meta name="description" content="seyoon20087.github.io" />
+    </Helmet>
+        {isBrowserLoaded ? <Navigate to="/" /> : null}
         </>
     );
 }
