@@ -1,6 +1,6 @@
 // import React, { useEffect } from "react";
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Navigate } from 'react-router-dom';
 
 function NotFound() {

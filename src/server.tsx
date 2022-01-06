@@ -3,7 +3,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 // import { StaticRouterContext } from "react-router";
 import { StaticRouter } from 'react-router-dom/server';
-import { Helmet } from 'react-helmet';
+import { HelmetProvider } from 'react-helmet-async';
 
 import App from './App';
 
@@ -31,20 +31,20 @@ const jsScriptTagsFromAssets = (assets, entrypoint, extra = '') => {
 };
 
 export const renderApp = (req: express.Request, res: express.Response) => {
-  // @ts-ignore
-  const context: StaticRouterContext = {};
+
+  const helmetContext = {};
 
   const markup = renderToString(
+    <HelmetProvider context={helmetContext}>
     <StaticRouter location={req.url}>
       <App />
     </StaticRouter>
+    </HelmetProvider>
   );
 
-  const helmet = Helmet.renderStatic();
+  // @ts-ignore
+  const { helmet } = helmetContext;
 
-  if (context.url) {
-    return { redirect: context.url };
-  } else {
     const html =
       // prettier-ignore
       `<!doctype html>`+
@@ -69,19 +69,16 @@ export const renderApp = (req: express.Request, res: express.Response) => {
   `</html>`;
 
     return { html };
-  }
 };
 
-const server = express()
+const server = express();
+
+server
   .disable('x-powered-by')
-  .use(express.static(process.env.RAZZLE_PUBLIC_DIR!))
-  .get('/*', (req: express.Request, res: express.Response) => {
-    const { html = '', redirect = false } = renderApp(req, res);
-    if (redirect) {
-      res.redirect(redirect);
-    } else {
-      res.send(html);
-    }
+  .use(express.static(`${__dirname}/../public`))
+  .get('/*', (req, res) => {
+    const { html } = renderApp(req, res);
+    res.send(html);
   });
 
 export default server;

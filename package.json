@@ -13,7 +13,7 @@
     "react": "next",
     "react-bootstrap": "latest",
     "react-dom": "next",
-    "react-helmet": "latest",
+    "react-helmet-async": "^1.2.2",
     "react-router-dom": "latest"
   },
   "devDependencies": {
@@ -26,7 +26,6 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "@types/react-helmet": "latest",
     "@types/react-router-dom": "latest",
     "@types/webpack-env": "latest",
     "babel-preset-razzle": "latest",
