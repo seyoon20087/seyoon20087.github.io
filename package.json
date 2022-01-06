@@ -13,7 +13,7 @@
     "react": "next",
     "react-bootstrap": "latest",
     "react-dom": "next",
-    "react-helmet-async": "^1.2.2",
+    "react-helmet-async": "latest",
     "react-router-dom": "latest"
   },
   "devDependencies": {

@@ -14,7 +14,6 @@ import "../css/darkmode.css";
 import "../css/custom.css";
 import { Helmet } from "react-helmet-async";
 import React from "react";
-import { isRegExp } from "util/types";
 
 function Home() {
 /*
