@@ -74,8 +74,8 @@ export const renderApp = (req: express.Request, res: express.Response) => {
 const server = express();
 
 server
-  .disable('x-powered-by')
-  .use(express.static(`${__dirname}/../public`))
+  .disable('x-powered-by') // @ts-ignore
+  .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', (req, res) => {
     const { html } = renderApp(req, res);
     res.send(html);
