@@ -63,7 +63,7 @@ export const renderApp = (req: express.Request, res: express.Response) => {
         `${cssLinksFromAssets(assets, 'client')}`+
     `</head>`+
     `<body ${helmet.bodyAttributes.toString()}>`+
-        `<div id="root">${markup}</div>`+
+        `<div id="__root">${markup}</div>`+
         `${jsScriptTagsFromAssets(assets, 'client', ' defer crossorigin')}`+
     `</body>`+
   `</html>`;

@@ -6,7 +6,7 @@ import './index.css';
 import { HelmetProvider } from 'react-helmet-async';
 
 if (document.getElementById('root')?.hasChildNodes()) { // @ts-ignore
-  ReactDOM.hydrateRoot(document.getElementById('root'), <React.StrictMode>
+  ReactDOM.hydrateRoot(document.getElementById('__root'), <React.StrictMode>
   <BrowserRouter>
   <HelmetProvider>
     <App />
@@ -14,7 +14,7 @@ if (document.getElementById('root')?.hasChildNodes()) { // @ts-ignore
   </BrowserRouter>
 </React.StrictMode>)
 } else { // @ts-ignore
-  ReactDOM.createRoot(document.getElementById('root')).render(
+  ReactDOM.createRoot(document.getElementById('__root')).render(
     <React.StrictMode>
       <BrowserRouter>
       <HelmetProvider>
