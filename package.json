@@ -32,7 +32,7 @@
     "concurrently": "latest",
     "cross-env": "latest",
     "html-webpack-plugin": "latest",
-    "mini-css-extract-plugin": "latest",
+    "mini-css-extract-plugin": "2.4.7",
     "razzle": "latest",
     "razzle-dev-utils": "latest",
     "typescript": "latest",
