@@ -40,9 +40,11 @@ export const renderApp = (req: express.Request, res: express.Response) => {
 
   const markup = renderToString(
     <HelmetProvider context={helmetContext}>
+      <ChunkExtractorManager extractor={extractor}>
     <StaticRouter location={req.url}>
       <App />
     </StaticRouter>
+    </ChunkExtractorManager>
     </HelmetProvider>
   );
 
