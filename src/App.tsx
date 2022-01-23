@@ -8,9 +8,11 @@ import { Routes, Route } from "react-router-dom";
 // import Home from './pages/Home';
 // import NotFound from './pages/NotFound';
 // import Footer from './components/Footer';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Footer from './components/Footer';
+import loadable from '@loadable/component';
+
+const Home = loadable(() => import('./pages/Home'));
+const NotFound = loadable(() => import('./pages/NotFound'));
+const Footer = loadable(() => import('./components/Footer'));
 
 function App() {
   return (

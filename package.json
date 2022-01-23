@@ -4,9 +4,12 @@
     "start": "concurrently \"yarn start:tsc\" \"razzle start\"",
     "build": "tsc -b && razzle build --noninteractive && razzle export",
     "test": "razzle test --env=jsdom",
-    "start:prod": "NODE_ENV=production node build/server.js"
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "postinstall": "curl https://gist.githubusercontent.com/seyoon20087/886d2f4241e2cdfe43222c5912779b37/raw/28392a2fbfc66dbd4394161d44a913671ca2575b/createConfigAsync.js > node_modules/razzle/config/createConfigAsync.js"
   },
   "dependencies": {
+    "@loadable/component": "latest",
+    "@loadable/server": "latest",
     "@popperjs/core": "latest",
     "bootstrap": "latest",
     "express": "latest",
@@ -17,12 +20,16 @@
     "react-router-dom": "latest"
   },
   "devDependencies": {
+    "@loadable/babel-plugin": "latest",
+    "@loadable/webpack-plugin": "latest",
     "@testing-library/dom": "latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
     "@types/express": "latest",
     "@types/jest": "latest",
+    "@types/loadable__component": "latest",
+    "@types/loadable__server": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
@@ -31,6 +38,7 @@
     "babel-preset-razzle": "latest",
     "concurrently": "latest",
     "cross-env": "latest",
+    "html-minifier": "latest",
     "html-webpack-plugin": "latest",
     "mini-css-extract-plugin": "2.4.7",
     "razzle": "latest",
@@ -39,6 +47,9 @@
     "url": "latest",
     "webpack": "latest",
     "webpack-dev-server": "latest"
+  },
+  "resolutions": {
+    "razzle/terser-webpack-plugin": "^5.1.3"
   },
   "packageManager": "yarn@3.1.1"
 }
