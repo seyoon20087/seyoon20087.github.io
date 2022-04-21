@@ -1,11 +1,12 @@
 import App from './App';
 import React from 'react';
 import express from 'express';
-import { renderToString } from 'react-dom/server';
+import { renderToPipeableStream } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
 import { StaticRouter } from 'react-router-dom/server';
 import path from 'path';
+// import { WritableAsPromise } from './writable-as-promise';
 
 
 const minify = require('html-minifier').minify;
@@ -38,14 +39,20 @@ export const renderApp = (req: express.Request, res: express.Response) => {
     entrypoints: ['client'],
   })
 
-  const markup = renderToString(
+  //const stream = new WritableAsPromise();
+  const {pipe} = renderToPipeableStream(
     <HelmetProvider context={helmetContext}>
       <ChunkExtractorManager extractor={extractor}>
     <StaticRouter location={req.url}>
       <App />
     </StaticRouter>
     </ChunkExtractorManager>
-    </HelmetProvider>
+    </HelmetProvider>,
+    {
+      onShellReady() {
+        pipe(res);
+      }
+    }
   );
 
   // @ts-ignore
