@@ -1,12 +1,11 @@
 import App from './App';
 import React from 'react';
 import express from 'express';
-import { renderToPipeableStream } from 'react-dom/server';
+import { renderToPipeableStream, renderToString } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
 import { StaticRouter } from 'react-router-dom/server';
 import path from 'path';
-// import { WritableAsPromise } from './writable-as-promise';
 
 
 const minify = require('html-minifier').minify;
@@ -32,14 +31,13 @@ const jsScriptTagsFromAssets = (assets, entrypoint, extra = '') => {
 
 const helmetContext = {};
 
-export const renderApp = (req: express.Request, res: express.Response) => {
+export const renderApp = async (req: express.Request, res: express.Response) => {
 
   const extractor = new ChunkExtractor({
     statsFile: path.resolve('build/public/loadable-stats.json'),
     entrypoints: ['client'],
   })
 
-  //const stream = new WritableAsPromise();
   const {pipe} = renderToPipeableStream(
     <HelmetProvider context={helmetContext}>
       <ChunkExtractorManager extractor={extractor}>
@@ -59,6 +57,7 @@ export const renderApp = (req: express.Request, res: express.Response) => {
   const { helmet } = helmetContext;
 
 
+  /*
     const html = minify(
       // prettier-ignore
       `<!doctype html>` + 
@@ -82,7 +81,7 @@ export const renderApp = (req: express.Request, res: express.Response) => {
         //`${cssLinksFromAssets(assets, 'client')}`+
       `</head>`+
       `<body ${helmet.bodyAttributes.toString()}>`+
-        `<div id="__root">${markup}</div>`+
+        `<div id="__root">${await res}</div>`+
         `${extractor.getScriptTags()}`+
         //`${jsScriptTagsFromAssets(assets, 'client', ' defer crossorigin')}`+
       `</body>`+
@@ -98,6 +97,28 @@ export const renderApp = (req: express.Request, res: express.Response) => {
         minifyCSS: true,
         minifyURLs: true,
       });
+      */
+     const html = `<!doctype html>${renderToString(
+       <html {...helmet.htmlAttributes.toComponent()}>
+         <head>
+            <meta charSet="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="https://avatars.githubusercontent.com/seyoon20087" />
+            <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/seyoon20087" />
+            <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+            <meta name="theme-color" content="#18191a" media="(prefers-color-scheme: dark)" />
+            <link rel="manifest" href="/manifest.webmanifest" />
+            {helmet.title.toComponent()}
+            {helmet.meta.toComponent()}
+            {helmet.link.toComponent()}
+            {helmet.style.toComponent()}
+            {helmet.noscript.toComponent()}
+            {helmet.script.toComponent()}
+            {extractor.getLinkTags()}
+            {extractor.getStyleTags()}
+         </head>
+       </html>
+     )}`;
 
     return { html };
 };
