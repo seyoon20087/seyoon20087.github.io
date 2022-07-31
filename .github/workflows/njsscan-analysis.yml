@@ -1,5 +1,6 @@
 # This workflow integrates njsscan with GitHub's Code Scanning feature
 # nodejsscan is a static security code scanner that finds insecure code patterns in your Node.js applications
+#tmp commit
 
 name: Node.js scan
 
