@@ -16,6 +16,8 @@ stages:
 
 page_build:
   stage: build
+  before_script:
+    - yarn install
   script:
     - env CI=true NODE_ENV=production yarn run build
     - mv build/public/404/index.html build/public/404.html
