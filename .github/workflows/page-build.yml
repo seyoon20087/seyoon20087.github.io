@@ -1,4 +1,3 @@
-#tmpcommit
 name: Build and deploy site
 on:
   push:
