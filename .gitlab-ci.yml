@@ -16,12 +16,8 @@ stages:
 
 page_build:
   stage: build
-  before_script:
-    - touch yarn.lock
-    - env YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
-    - yarn postinstall # postinstall or prepare scripts are not being called as of Yarn >= 2
   script:
-    - env CI=false NODE_ENV=production yarn run build
+    - env CI=true NODE_ENV=production yarn run build
     - mv build/public/404/index.html build/public/404.html
     - rm -rf build/public/404
 #  after_script:
