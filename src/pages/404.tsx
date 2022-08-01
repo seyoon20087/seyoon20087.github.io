@@ -17,7 +17,9 @@ function RedirectToHome() {
     <CommonPage>
       {!isBrowserLoaded ? (
         <Head>
-          <meta httpEquiv="refresh" content="0; url=/" />
+          <noscript>
+            <meta httpEquiv="refresh" content="0; url=/" />
+          </noscript>
         </Head>
       ) : null}
     </CommonPage>
