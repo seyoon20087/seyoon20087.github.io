@@ -23,7 +23,7 @@ jobs:
           curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
           chmod a+x /usr/local/bin/gitlab-runner
       - name: Compile site using GitLab Runner
-        run: gitlab-runner exec shell page_build --timeout 120
+        run: gitlab-runner exec shell page_build --timeout 200
       - name: Attempt to deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
