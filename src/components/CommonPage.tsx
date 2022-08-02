@@ -1,6 +1,12 @@
 import React from "react";
 import Head from "./Head";
 import BrowserContextProvider from "./BrowserContext";
+import styled from "@emotion/styled";
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 function CommonPage({ children }: { children?: React.ReactNode }) {
   return (
@@ -34,7 +40,9 @@ function CommonPage({ children }: { children?: React.ReactNode }) {
           media="(prefers-color-scheme: dark)"
         />
       </Head>
-      <BrowserContextProvider>{children}</BrowserContextProvider>
+      <BrowserContextProvider>
+        <Wrapper>{children}</Wrapper>
+      </BrowserContextProvider>
     </React.Fragment>
   );
 }
