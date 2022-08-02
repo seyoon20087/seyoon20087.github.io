@@ -10,8 +10,8 @@ import { useId } from "react";
 function Home() {
   const isBrowserLoaded = useContext(BrowserContext);
   const tooltipIds = {
-    1: useId(),
-    2: useId(),
+    1: useId().replace(/:/, '__'),
+    2: useId().replace(/:/, '__'),
   };
   return (
     <React.Fragment>
