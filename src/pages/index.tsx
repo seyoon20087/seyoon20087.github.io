@@ -11452,6 +11452,13 @@ function Home() {
             }
           `}
         />
+        <Global
+          styles={css`
+            body {
+              -webkit-font-smoothing: antialised;
+            }
+          `}
+        />
         <div className="container">
           <h1
             css={css`
