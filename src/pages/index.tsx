@@ -11455,7 +11455,7 @@ function Home() {
         <Global
           styles={css`
             body {
-              -webkit-font-smoothing: antialised;
+              -webkit-font-smoothing: antialiased;
             }
           `}
         />
