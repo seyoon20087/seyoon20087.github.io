@@ -1,6 +1,5 @@
 import type { GatsbyBrowser, WrapRootElementBrowserArgs } from "gatsby";
 import React from "react";
-import BrowserContextProvider from "./src/components/BrowserContext";
 
 export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
   element,
