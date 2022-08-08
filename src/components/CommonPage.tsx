@@ -40,9 +40,7 @@ function CommonPage({ children }: { children?: React.ReactNode }) {
           media="(prefers-color-scheme: dark)"
         />
       </Head>
-      <BrowserContextProvider>
         <Wrapper>{children}</Wrapper>
-      </BrowserContextProvider>
     </React.Fragment>
   );
 }
