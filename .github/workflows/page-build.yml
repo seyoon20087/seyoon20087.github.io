@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Set up Node.js v17
+      - name: Set up Node.js v18
         uses: actions/setup-node@v2
         with:
-          node-version: '17'
+          node-version: '18'
       - name: Download and configure GitLab Runner
         run: |
           curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
