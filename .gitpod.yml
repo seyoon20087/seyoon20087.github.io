@@ -4,7 +4,7 @@ tasks:
     command: yarn develop
 
 ports:
-  - port: 9000
+  - port: 8000
     onOpen: open-preview
     description: Website preview
 
