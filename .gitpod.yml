@@ -1,7 +1,7 @@
 # Learn more about this file at https://www.gitpod.io/docs/references/gitpod-yml
 tasks:
-  - init: nvm install v18.2.1 ; yarn
-    command: yarn develop
+  - init: nvm install 18.12.1 ; yarn
+    command: nvm install 18.12.1 ; yarn develop
 
 ports:
   - port: 8000
