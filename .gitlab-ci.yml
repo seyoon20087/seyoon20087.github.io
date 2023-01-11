@@ -17,6 +17,8 @@ stages:
 page_build:
   stage: build
   before_script:
+    - node || (echo "Node.js does NOT exist in this env!" ; exit 1)
+    - npm install -g yarn@latest
     - yarn install --frozen-lockfile
   script:
     - env CI=true NODE_ENV=production yarn run build
