@@ -35,4 +35,4 @@ include:
 #  - template: Security/Container-Scanning.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
 #  - template: API-Fuzzing.gitlab-ci.yml
-  - template: Security/Cluster-Image-Scanning.gitlab-ci.yml
+#  - template: Security/Cluster-Image-Scanning.gitlab-ci.yml
