@@ -18,12 +18,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
-      - name: Download and configure GitLab Runner
+      - name: Setup yarn
         run: |
-          curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
-          chmod a+x /usr/local/bin/gitlab-runner
-      - name: Compile site using GitLab Runner
-        run: gitlab-runner exec shell page_build --timeout 200
+          npm install -g npm@latest yarn@latest --frozen-lockfile
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile || yarn install
+      - name: Compile site
+        env:
+          CI: true
+          NODE_ENV: 'production'
+        run: |
+          yarn run build
       - name: Attempt to deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
