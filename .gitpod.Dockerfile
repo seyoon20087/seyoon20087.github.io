@@ -22,3 +22,5 @@ RUN curl https://nodejs.org/dist/v18.13.0/node-v18.13.0-linux-x64.tar.xz -LOs &&
     rsync -Ha node-v18.13.0-linux-x64/** /usr/local/ && rm -rf node-v18.13.0-linux-x64
 
 RUN npm install -g npm@latest yarn@latest
+
+ENV SHELL=/bin/bash
