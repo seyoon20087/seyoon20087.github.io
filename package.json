@@ -30,6 +30,7 @@
   "resolutions": {
     "@sideway/formula": "~> 3.0.1",
     "engine.io": "~> 6.2.1",
+    "cacheable-request": "10.2.7",
     "json5": "~> 2.2.2"
   }
 }
