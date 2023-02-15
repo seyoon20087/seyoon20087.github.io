@@ -30,7 +30,9 @@
   "resolutions": {
     "@sideway/formula": "~> 3.0.1",
     "engine.io": "~> 6.2.1",
-    "cacheable-request": "10.2.7",
+    "gatsby/latest-version/package-json/got/cacheable-request": "10.2.1",
+    "gatsby/got/cacheable-request": "seyoon20087/cacheable-request-compiled#45883395182aa7ae66d71b520d97a6b9b6b6fede",
+    "gatsby/gatsby-core-utils/got/cacheable-request": "seyoon20087/cacheable-request-compiled#45883395182aa7ae66d71b520d97a6b9b6b6fede",
     "json5": "~> 2.2.2"
   }
 }
