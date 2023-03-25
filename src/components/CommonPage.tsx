@@ -16,6 +16,10 @@ function CommonPage({ children }: { children?: React.ReactNode }) {
         title="seyoon20087.github.io"
         meta={[
           {
+            name: "google",
+            content: "notranslate",
+          },
+          {
             name: "description",
             content: "seyoon20087.github.io",
           },
@@ -40,7 +44,7 @@ function CommonPage({ children }: { children?: React.ReactNode }) {
           media="(prefers-color-scheme: dark)"
         />
       </Head>
-        <Wrapper>{children}</Wrapper>
+      <Wrapper>{children}</Wrapper>
     </React.Fragment>
   );
 }
