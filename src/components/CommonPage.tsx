@@ -14,16 +14,6 @@ function CommonPage({ children }: { children?: React.ReactNode }) {
       <Head
         htmlAttributes={{ lang: "en", dir: "ltr" }}
         title="seyoon20087.github.io"
-        meta={[
-          {
-            name: "google",
-            content: "notranslate",
-          },
-          {
-            name: "description",
-            content: "seyoon20087.github.io",
-          },
-        ]}
       >
         <link
           rel="icon"
@@ -33,6 +23,8 @@ function CommonPage({ children }: { children?: React.ReactNode }) {
           rel="apple-touch-icon"
           href="https://avatars.githubusercontent.com/seyoon20087"
         />
+        <meta name="google" content="notranslate" />
+        <meta name="description" content="seyoon20087.github.io" />
         <meta
           name="theme-color"
           content="#ffffff"
