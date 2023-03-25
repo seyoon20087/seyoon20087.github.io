@@ -38,7 +38,7 @@ export const replaceRenderer: GatsbySSR["replaceRenderer"] = ({
       data-emotion={[style.key, style.ids.join(" ")].join(" ")}
       key={style.key}
       // nosemgrep:typescript.react.security.audit.react-dangerouslysetinnerhtml.react-dangerouslysetinnerhtml
-      dangerouslySetInnerHTML={{ __html: style.css }}
+      dangerouslySetInnerHTML={{ __html: '' }}
     />
   ));
 
