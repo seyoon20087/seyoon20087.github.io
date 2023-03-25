@@ -1,4 +1,3 @@
-/*
 import type { GatsbySSR, WrapRootElementNodeArgs } from "gatsby";
 import { renderToString } from "react-dom/server";
 import {
@@ -38,7 +37,7 @@ export const replaceRenderer: GatsbySSR["replaceRenderer"] = ({
     <style
       data-emotion={[style.key, style.ids.join(" ")].join(" ")}
       key={style.key}
-      // ok:react-dangerouslysetinnerhtml
+      // nosemgrep:typescript.react.security.audit.react-dangerouslysetinnerhtml.react-dangerouslysetinnerhtml
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ));
@@ -46,4 +45,3 @@ export const replaceRenderer: GatsbySSR["replaceRenderer"] = ({
   setHeadComponents(emotionStyleTags);
   replaceBodyHTMLString(elem);
 };
-*/
