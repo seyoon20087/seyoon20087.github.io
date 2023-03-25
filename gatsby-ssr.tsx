@@ -1,3 +1,4 @@
+/*
 import type { GatsbySSR, WrapRootElementNodeArgs } from "gatsby";
 import { renderToString } from "react-dom/server";
 import {
@@ -45,3 +46,4 @@ export const replaceRenderer: GatsbySSR["replaceRenderer"] = ({
   setHeadComponents(emotionStyleTags);
   replaceBodyHTMLString(elem);
 };
+*/
