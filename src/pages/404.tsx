@@ -7,7 +7,7 @@ import Head from "../components/Head";
 function RedirectToHome() {
   React.useEffect(() => {
     // setTimeout(() => {
-      navigate("/", { replace: true });
+    navigate("/", { replace: true });
     // }, 0);
   });
 

@@ -9,10 +9,7 @@ import { useId } from "react";
 
 function Home() {
   const isBrowserLoaded = useContext(BrowserContext);
-  const tooltipIds = {
-    1: useId().replace(/:/g, "__"),
-    2: useId().replace(/:/g, "__"),
-  };
+  const tooltipIds = [useId().replace(/:/g, "__"), useId().replace(/:/g, "__")];
   return (
     <React.Fragment>
       <CommonPage>
@@ -422,7 +419,11 @@ function Home() {
               opacity: 1;
             }
 
-            [list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
+            [list]:not([type="date"]):not([type="datetime-local"]):not(
+                [type="month"]
+              ):not([type="week"]):not(
+                [type="time"]
+              )::-webkit-calendar-picker-indicator {
               display: none !important;
             }
 
@@ -2154,10 +2155,14 @@ function Home() {
                 transition: none;
               }
             }
-            .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+            .form-control:hover:not(:disabled):not(
+                [readonly]
+              )::-webkit-file-upload-button {
               background-color: #dde0e3;
             }
-            .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+            .form-control:hover:not(:disabled):not(
+                [readonly]
+              )::file-selector-button {
               background-color: #dde0e3;
             }
 
@@ -2685,7 +2690,9 @@ function Home() {
             }
 
             .input-group:not(.has-validation)
-              > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+              > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+                .form-floating
+              ),
             .input-group:not(.has-validation)
               > .dropdown-toggle:nth-last-child(n + 3),
             .input-group:not(.has-validation)
@@ -2698,8 +2705,9 @@ function Home() {
               border-bottom-right-radius: 0;
             }
             .input-group.has-validation
-              > :nth-last-child(n
-                + 3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+              > :nth-last-child(n + 3):not(.dropdown-toggle):not(
+                .dropdown-menu
+              ):not(.form-floating),
             .input-group.has-validation
               > .dropdown-toggle:nth-last-child(n + 4),
             .input-group.has-validation
@@ -2712,7 +2720,11 @@ function Home() {
               border-bottom-right-radius: 0;
             }
             .input-group
-              > :not(:first-child):not(.dropdown-menu):not(.form-floating):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback),
+              > :not(:first-child):not(.dropdown-menu):not(.form-floating):not(
+                .valid-tooltip
+              ):not(.valid-feedback):not(.invalid-tooltip):not(
+                .invalid-feedback
+              ),
             .input-group > .form-floating:not(:first-child) > .form-control,
             .input-group > .form-floating:not(:first-child) > .form-select {
               margin-left: -1px;
@@ -11485,7 +11497,7 @@ function Home() {
                 key="top"
                 placement="top"
                 overlay={
-                  <Tooltip id={tooltipIds[1]}>
+                  <Tooltip id={tooltipIds[0]}>
                     {"View profile on GitHub.com"}
                   </Tooltip>
                 }
@@ -11519,7 +11531,7 @@ function Home() {
                 key="top"
                 placement="top"
                 overlay={
-                  <Tooltip id={tooltipIds[2]}>
+                  <Tooltip id={tooltipIds[1]}>
                     {"View profile on GitLab.com"}
                   </Tooltip>
                 }
