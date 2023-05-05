@@ -33,36 +33,38 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
     module: {
       rules: [
         {
-          test: /\.(c|m)?js$/,
+          test: /\.(js|mjs|jsx|ts|tsx)$/,
           loader: "babel-loader",
+          exclude: /node_modules/,
           enforce: "post",
           options: {
             targets,
+            babelrc: false,
+            configFile: false,
             presets: [
-              "@babel/preset-env",
-              ["@babel/preset-react", { runtime: "automatic" }],
+              [
+                "babel-preset-react-app",
+                {
+                  runtime: "automatic",
+                  helpers: true,
+                },
+              ],
             ],
           },
         },
         {
-          test: /\.m?ts$/,
+          test: /\.(js|mjs)$/,
+          exclude: /@babel(?:\/|\\{1,2})runtime/,
+          include: /node_modules/,
+          enforce: 'pre',
           loader: "babel-loader",
-          enforce: "post",
           options: {
             targets,
-            presets: ["@babel/preset-env", "@babel/preset-typescript"],
-          },
-        },
-        {
-          test: /\.m?(j|t)sx$/,
-          loader: "babel-loader",
-          enforce: "post",
-          options: {
-            targets,
+            babelrc: false,
+            configFile: false,
+            compact: true,
             presets: [
-              "@babel/preset-env",
-              ["@babel/preset-react", { runtime: "automatic" }],
-              "@babel/preset-typescript",
+              ["babel-preset-react-app/dependencies", { helpers: true }],
             ],
           },
         },
