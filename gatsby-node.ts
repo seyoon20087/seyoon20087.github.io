@@ -33,7 +33,7 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
     module: {
       rules: [
         {
-          test: /\.(js|mjs|jsx|ts|tsx)$/,
+          test: /\.(js|cjs|mjs|jsx|ts|tsx)$/,
           loader: "babel-loader",
           exclude: /node_modules/,
           enforce: "post",
@@ -53,7 +53,7 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
           },
         },
         {
-          test: /\.(js|mjs)$/,
+          test: /\.(js|cjs|mjs)$/,
           exclude: /@babel(?:\/|\\{1,2})runtime/,
           include: /node_modules/,
           enforce: "pre",
