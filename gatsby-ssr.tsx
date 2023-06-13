@@ -1,11 +1,9 @@
 import type { GatsbySSR } from "gatsby";
-import ReactDOMServer from "react-dom/server.browser";
+import { renderToReadableStream } from "react-dom/server.browser";
 import React from "react";
 import { CacheProvider } from "@emotion/react";
 import { createEmotionCache } from "./src/emotion/createEmotionCache";
 import createEmotionServer from "@emotion/server/create-instance";
-
-const { renderToReadableStream } = ReactDOMServer;
 
 function decodeText(input: Uint8Array | undefined, textDecoder: TextDecoder) {
   return textDecoder.decode(input, { stream: true });
@@ -30,13 +28,13 @@ async function streamToString(
   }
 }
 
-async function renderToStringReadable(element: React.ReactElement) {
+async function renderToString(element: React.ReactElement) {
   const renderStream = await renderToReadableStream(element);
   await renderStream.allReady;
   return streamToString(renderStream);
 }
 
-export const replaceRenderer: GatsbySSR["replaceRenderer"] = ({
+export const replaceRenderer: GatsbySSR["replaceRenderer"] = async ({
   replaceBodyHTMLString,
   bodyComponent,
   setHeadComponents,
@@ -44,20 +42,20 @@ export const replaceRenderer: GatsbySSR["replaceRenderer"] = ({
   const serverCache = createEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(serverCache);
 
-  renderToStringReadable(
+  const renderedHtml: string = await renderToString(
     <CacheProvider value={serverCache}>{bodyComponent}</CacheProvider>
-  ).then((resString) => {
-    const emotionStyles = extractCriticalToChunks(resString);
-    const emotionStyleTags = emotionStyles.styles.map((style) => (
-      <style
-        data-emotion={[style.key, style.ids.join(" ")].join(" ")}
-        key={style.key}
-        // nosemgrep:typescript.react.security.audit.react-dangerouslysetinnerhtml.react-dangerouslysetinnerhtml
-        dangerouslySetInnerHTML={{ __html: style.css }}
-      />
-    ));
+  );
 
-    setHeadComponents(emotionStyleTags);
-    replaceBodyHTMLString(resString);
-  });
+  const emotionStyles = extractCriticalToChunks(renderedHtml);
+  const emotionStyleTags = emotionStyles.styles.map((style) => (
+    <style
+      data-emotion={[style.key, style.ids.join(" ")].join(" ")}
+      key={style.key}
+      // nosemgrep:typescript.react.security.audit.react-dangerouslysetinnerhtml.react-dangerouslysetinnerhtml
+      dangerouslySetInnerHTML={{ __html: style.css }}
+    />
+  ));
+
+  setHeadComponents(emotionStyleTags);
+  replaceBodyHTMLString(renderedHtml);
 };
