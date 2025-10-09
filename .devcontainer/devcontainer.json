@@ -1,0 +1,23 @@
+{
+  "name": "seyoon20087.github.io",
+  "build": {
+    "dockerfile": "../.gitpod.Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "remoteUser": "gitpod",
+  "containerUser": "gitpod",
+  "workspaceFolder": "/workspace/seyoon20087.github.io",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/seyoon20087.github.io,type=bind",
+  "forwardPorts": [
+    8000
+  ],
+  "portsAttributes": {
+    "8000": {
+      "label": "Website preview",
+      "onAutoForward": "openPreview",
+      "elevateIfNeeded": true
+    }
+  }
+}
